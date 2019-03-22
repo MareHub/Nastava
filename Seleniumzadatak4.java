@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Seleniumzadatak4 {
 
@@ -45,6 +46,8 @@ public class Seleniumzadatak4 {
 		WebElement postanskiBroj = wb.findElement(By.name("postalCode"));
 		postanskiBroj.click();
 		postanskiBroj.sendKeys("+381");
+		Select country = new Select(wb.findElement(By.name("country")));
+		country.selectByVisibleText("SERBIA");
 		WebElement user = wb.findElement(By.name("email"));
 		user.click();
 		user.sendKeys("Mare");
@@ -56,11 +59,6 @@ public class Seleniumzadatak4 {
 		pass2.sendKeys("MareCare12345");
 		WebElement submit = wb.findElement(By.name("register"));
 		submit.click();
-		
-		
-		
-
-
 
 	}
 
